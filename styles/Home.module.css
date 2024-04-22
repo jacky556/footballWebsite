@@ -55,6 +55,11 @@
   line-height: 1.8;
 }
 
+.scheduleCardLeagueTitle{
+  text-align: center;
+  color: #fff
+}
+
 .scheduleCardVersusContainer{
   height: 128px;
   margin: auto;
