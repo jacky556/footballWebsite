@@ -1,20 +1,111 @@
-.sectionContainer{
+.root{
+}
+
+.sectionContainer,
+.sectionOneContainer{
   padding: 56px 0;
-  min-height: 2362px;
   position: relative;
 }
 
-.sectionBackground{
+.sectionContainer{
+  min-height: 2362px;
+}
+
+.sectionOneContainer{
+  background-image: url(/Images/739f79e-1600.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sectionOneInnerContainer{
+  padding: 0px 0.75rem;
+  max-width: 1140px;
+  margin: auto;
+}
+
+.scheduleSwiperContainer,
+.scheduleCardVersusContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.scheduleCard{
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  min-height: 300px;
+  width: calc(50% - 16px);
+  margin: 0 8px;
+}
+
+.scheduleCardDateTimeContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.scheduleCardDateTime{
+  font-weight: 400;
+  font-family: "Montserrat-ExtraBold","Helvetica Neue","Open Sans",Arial,sans-serif;
+}
+
+.scheduleCardTimeZone{
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.scheduleCardVersusContainer{
+  height: 128px;
+  margin: auto;
+  gap: 1rem;
+}
+
+.versusText{
+  width: 72px;
+  height: 72px;
+  color: #ebb105;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.captionText{
+  padding: 20% 0;
+  font-size: 4vw;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: "Montserrat-ExtraBold","Helvetica Neue","Open Sans",Arial,sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.rightText{
+  text-align: right;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.calendarImage{
+  margin-right: 5px;
+}
+
+.sectionBackground,
+.sectionBackgroundSlideSchedule{
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
-  background-image: url(/Images/SectionBackground.jpg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.sectionBackground{
+  background-image: url(/Images/SectionBackground.jpg);
 }
 
 .contentContainer{
@@ -24,7 +115,7 @@
   height: 100%;
   position: absolute;
   top: 0;
-  padding: 56px 12px;
+  padding: 56px 2rem;
   margin: auto;
   left: 50%;
   transform: translateX(-50%);
@@ -86,10 +177,19 @@
   text-align: center;
 }
 
+.matchResultRowsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .teamTitle,
 .matchTeamTitle,
 .leagueTitle,
-.matchDate{
+.matchDate,
+.moreMatchTitle,
+.rankCellContainer,
+.rankTeamTitle{
   font-size: 14px;
   line-height: 1.2;
   color: #fff;
@@ -147,8 +247,143 @@
   color: #fff;
 }
 
+.moreMatchTitle{
+  text-decoration-color: #fff;
+  margin: 3rem 0;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
+.rankContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.rankContainer > :first-child{
+  border-bottom: 1px solid #fff;
+}
+
+.rankGridRow{
+  display: grid;
+  grid-template-columns: 1fr 2fr repeat(8, 1fr);
+  padding: 0.75rem 0;
+}
+
+.rankHeaderCell{
+  display: flex;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 0 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  word-break: break-word;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center; 
+}
+
+.rankGridRow > :nth-child(2){
+  justify-content: left;
+}
+
+.rankTeamCellContainer{
+  display: flex;
+  gap: 1rem;
+}
+
+.rankCellContainer,
+.rankTeamTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rankCellContainer{
+  font-size: 18px;
+}
+
+.singlePageSliderSection{
+  background: linear-gradient(180deg,#c6352a 0,#830d0b);
+  padding: 56px 0;
+  position: relative;
+}
+
+.singlePageSliderContainer{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 0.75rem;
+  max-width: 1140px;
+  margin: auto;
+}
+
+.eventBannerContainer{
+  position: relative;
+  width: calc(33.33333% - 16px);
+  margin: 0 8px 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 104px;
+}
+
+.eventBanner{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.patternBar{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #000;
+  z-index: 1;
+  padding: 4px;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.patternContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.patternImage{
+  width: 56px;
+  height: auto;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.patternText{
+  font-size: 12px;
+  color: #575757;
+  word-break: keep-all;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  font-weight: 400;
+  font-family: "Montserrat-ExtraBold","Helvetica Neue","Open Sans",Arial,sans-serif;
+}
+
+
+
+
 @media only screen and (min-width:1200px){
-  .contentContainer{
+  .contentContaine,
+  .singlePageSliderContainerr{
     max-width: 1140px;
   }
 }

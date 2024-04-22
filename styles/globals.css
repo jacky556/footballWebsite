@@ -42,6 +42,39 @@
   font-family:"Montserrat-Regular","Helvetica Neue","Open Sans",Arial,sans-serif;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    transform: translateY(-25%);
+    transition: all .3s;
+  }
+  
+  .swiper-pagination-bullet-active {
+    width: 15px;
+    height: 15px;
+    top: 0;
+    transform: translateY(0);
+  }
 }
 
 @font-face {
@@ -52,6 +85,13 @@
   font-display: swap
  }
 
+ @font-face {
+  font-family: 'Montserrat-ExtraBold';
+  src: url('/fonts/Montserrat-ExtraBold.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+ }
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -109,7 +149,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 hr{
