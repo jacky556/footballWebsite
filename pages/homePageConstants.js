@@ -226,6 +226,69 @@ export const rankHeaders = [
     '得分'
 ]
 
+export const allFixtures = [
+    [
+        {
+            leftTeam: teams[0],
+            rightTeam: teams[1],
+            date: '2024-04-27',
+            time: '15:00',
+            league: '中銀人壽香港超級聯賽',
+            location: '香港仔運動場',
+            timeZone: 'UTC+8'
+        },
+        {
+            leftTeam: teams[2],
+            rightTeam: teams[3],
+            date: '2024-04-29',
+            time: '15:00',
+            league: '中銀人壽香港超級聯賽',
+            location: '北區運動場',
+            timeZone: 'UTC+8'
+        },
+    ],
+    [
+        {
+            leftTeam: teams[4],
+            rightTeam: teams[5],
+            date: '2024-04-27',
+            time: '15:00',
+            league: '中銀人壽香港超級聯賽',
+            location: '香港仔運動場',
+            timeZone: 'UTC+8'
+        },
+        {
+            leftTeam: teams[6],
+            rightTeam: teams[7],
+            date: '2024-04-29',
+            time: '15:00',
+            league: '中銀人壽香港超級聯賽',
+            location: '北區運動場',
+            timeZone: 'UTC+8'
+        },
+    ],
+    [
+        {
+            leftTeam: teams[8],
+            rightTeam: teams[9],
+            date: '2024-04-27',
+            time: '15:00',
+            league: '中銀人壽香港超級聯賽',
+            location: '香港仔運動場',
+            timeZone: 'UTC+8'
+        },
+        {
+            leftTeam: teams[7],
+            rightTeam: teams[4],
+            date: '2024-04-29',
+            time: '15:00',
+            league: '中銀人壽香港超級聯賽',
+            location: '北區運動場',
+            timeZone: 'UTC+8'
+        },
+    ],
+]
+
 import banner1 from '../public/Images/EventBanners/Ground_Staff.png';
 import banner2 from '../public/Images/EventBanners/HKFA_Web Banner_20230724.png';
 import banner3 from '../public/Images/EventBanners/media.png';

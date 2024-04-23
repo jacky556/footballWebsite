@@ -8,7 +8,8 @@ import {
   singlePageSliderImages,
   patternImage,
   calendarImage,
-  footballPitchImage
+  footballPitchImage,
+  allFixtures
 } from "./homePageConstants";
 import Image from "next/image";
 // core version + navigation, pagination modules:
@@ -48,112 +49,88 @@ export default function Home() {
             />
             {'加入賽程至日曆'}
           </div>
-          <div className={s.scheduleSwiperContainer}>
-            <div className={s.scheduleCard}>
-              <div className={s.scheduleCardDateTimeContainer}>
-                <div className={s.scheduleCardDateTime}>
-                  {'2024-04-27  |  15:00'}
-                </div>
-                <div className={s.scheduleCardTimeZone}>
-                  {'UTC+8'}
-                </div>
-              </div>
-              <div className={s.scheduleCardLeagueTitle}>
-                {'中銀人壽香港超級聯賽'}
-              </div>
-              <div className={s.scheduleCardVersusContainer}>
-                <div className={s.teamContainer}>
-                  <div className={s.teamLogoContainer}>
-                    <Image 
-                      src={teams[0].logoUrl}
-                      width={71}
-                      height={71}
-                      className={s.teamLogo}
-                    />
-                  </div>
-                  <div className={s.teamTitle}>
-                    {teams[0].title}
-                  </div>
-                </div>
-                <div
-                  className={s.versusText}
-                >
-                  {'VS'}
-                </div>
-                <div className={s.teamContainer}>
-                  <div className={s.teamLogoContainer}>
-                    <Image 
-                      src={teams[0].logoUrl}
-                      width={71}
-                      height={71}
-                      className={s.teamLogo}
-                    />
-                  </div>
-                  <div className={s.teamTitle}>
-                    {teams[0].title}
-                  </div>
-                </div>
-              </div>
-              <div className={s.scheduleCardLocation}>
-                <Image
-                  src={footballPitchImage}
-                />
-                {'香港仔運動場'}
-              </div>
-            </div>
-            <div className={s.scheduleCard}>
-              <div className={s.scheduleCardDateTimeContainer}>
-                <div className={s.scheduleCardDateTime}>
-                  {'2024-04-27  |  15:00'}
-                </div>
-                <div className={s.scheduleCardTimeZone}>
-                  {'UTC+8'}
-                </div>
-              </div>
-              <div className={s.scheduleCardLeagueTitle}>
-                {'中銀人壽香港超級聯賽'}
-              </div>
-              <div className={s.scheduleCardVersusContainer}>
-                <div className={s.teamContainer}>
-                  <div className={s.teamLogoContainer}>
-                    <Image 
-                      src={teams[0].logoUrl}
-                      width={71}
-                      height={71}
-                      className={s.teamLogo}
-                    />
-                  </div>
-                  <div className={s.teamTitle}>
-                    {teams[0].title}
-                  </div>
-                </div>
-                <div
-                  className={s.versusText}
-                >
-                  {'VS'}
-                </div>
-                <div className={s.teamContainer}>
-                  <div className={s.teamLogoContainer}>
-                    <Image 
-                      src={teams[0].logoUrl}
-                      width={71}
-                      height={71}
-                      className={s.teamLogo}
-                    />
-                  </div>
-                  <div className={s.teamTitle}>
-                    {teams[0].title}
-                  </div>
-                </div>
-              </div>
-              <div className={s.scheduleCardLocation}>
-                <Image
-                  src={footballPitchImage}
-                />
-                {'香港仔運動場'}
-              </div>
-            </div>
-          </div>
+          {console.log("jopjqwe", teams.map((item,index) => ({title: item.title, index})))}
+          <Swiper
+            pagination={pagination}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {
+              allFixtures.map(
+                fixtures => (
+                  <SwiperSlide>
+                    <div className={s.scheduleSwiperContainer}>
+                    {
+                      fixtures.map(fixture => (
+                        <div className={s.scheduleCard}>
+                          <div className={s.scheduleCardDateTimeContainer}>
+                            <div className={s.scheduleCardDateTime}>
+                              <span>{fixture.date}</span>
+                              <span 
+                                style={{
+                                  margin: '0 1rem'
+                                }}
+                              >
+                                {'|'}
+                              </span>
+                              <span>{fixture.time}</span>
+                            </div>
+                            <div className={s.scheduleCardTimeZone}>
+                              {fixture.timeZone}
+                            </div>
+                          </div>
+                          <div className={s.scheduleCardLeagueTitle}>
+                            {fixture.league}
+                          </div>
+                          <div className={s.scheduleCardVersusContainer}>
+                            <div className={s.teamContainer}>
+                              <div className={s.teamLogoContainer}>
+                                <Image 
+                                  src={fixture.leftTeam.logoUrl}
+                                  width={71}
+                                  height={71}
+                                  className={s.teamLogo}
+                                />
+                              </div>
+                              <div className={s.scheduleTeamTitle}>
+                                {fixture.leftTeam.title}
+                              </div>
+                            </div>
+                            <div
+                              className={s.versusText}
+                            >
+                              {'VS'}
+                            </div>
+                            <div className={s.teamContainer}>
+                              <div className={s.teamLogoContainer}>
+                                <Image 
+                                  src={fixture.rightTeam.logoUrl}
+                                  width={71}
+                                  height={71}
+                                  className={s.teamLogo}
+                                />
+                              </div>
+                              <div className={s.scheduleTeamTitle}>
+                                {fixture.rightTeam.title}
+                              </div>
+                            </div>
+                          </div>
+                          <div className={s.scheduleCardLocation}>
+                            <Image
+                              src={footballPitchImage}
+                              className={s.footballPitchImage}
+                            />
+                            <div className={s.scheduleCardLocationText}>{fixture.location}</div>
+                          </div>
+                        </div>
+                      ))
+                    }
+                    </div>
+                  </SwiperSlide>
+                )
+              )
+            }
+          </Swiper>
         </div>
       </div>
       <div className={s.singlePageSliderSection}>
