@@ -133,6 +133,25 @@ export default function Home() {
           </Swiper>
         </div>
       </div>
+      <div className={s.sectionTwoContainer}>
+        <div className={s.sectionTwoInnerContainer}>
+          <div className={s.bigNewsAndBigSlideContainer}>
+
+          </div>
+          <div className={s.newsSwiperContainer}>
+            <Swiper
+              pagination={pagination}
+              modules={[Pagination]}
+              className="mySwiper"
+            >
+              
+            </Swiper>
+          </div>
+          <div className={s.twoBlocksContainer}>
+
+          </div>
+        </div>
+      </div>
       <div className={s.singlePageSliderSection}>
         <Swiper
           pagination={pagination}

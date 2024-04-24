@@ -2,7 +2,8 @@
 }
 
 .sectionContainer,
-.sectionOneContainer{
+.sectionOneContainer,
+.sectionTwoContainer{
   padding: 56px 0;
   position: relative;
 }
@@ -17,7 +18,8 @@
   background-repeat: no-repeat;
 }
 
-.sectionOneInnerContainer{
+.sectionOneInnerContainer,
+.sectionTwoInnerContainer{
   padding: 0px 0.75rem;
   max-width: 1140px;
   margin: auto;
@@ -165,7 +167,10 @@
   font-size: 32px;
 }
 
-.redSeperatorContainer{
+.redSeperatorContainer,
+.bigNewsAndBigSlideContainer,
+.newsSwiperContainer,
+.twoBlocksContainer{
   width: 100%;
   position: relative;
   display: block;
