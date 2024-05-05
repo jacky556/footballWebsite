@@ -9,8 +9,13 @@ import {
   patternImage,
   calendarImage,
   footballPitchImage,
-  allFixtures
+  allFixtures,
+  rightArrowImage,
+  sectionTwoSlides,
+  mvpImg,
+  newsSwiperData
 } from "./homePageConstants";
+import { hideAllNavBar } from "./utilities";
 import Image from "next/image";
 // core version + navigation, pagination modules:
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -33,8 +38,46 @@ export default function Home() {
     },
   };
 
+  const BigSlideContainer = ({data: { isBig, title, description, imageUrl  }}) => (
+    <div 
+      className={s.bigSlideContainer}
+      style={{
+        height: isBig ? '300px' : '141px'
+      }}
+    >
+      <div className={isBig ? s.polygonContainer : s.smallPolygonContainer}>
+        <div 
+          className={
+            isBig
+            ? s.polygonInnerContainer
+            : s.smallPolygonInnerContainer
+          }
+        >
+          <div className={`${ isBig ? s.slideTitle : s.smallSlideTitle} ${s.bigSlideTitle}`}>
+            {title}
+          </div>
+          <div className={s.slideRedSeperator}/>
+          {
+            isBig && (
+              <div className={`${s.bigSlideTitle} ${s.slideText}`}>
+                {description}
+              </div>
+            )
+          }
+          <div className={s.slideTextSmall}>
+            {'更多...'}
+          </div>
+        </div>
+      </div>
+      <Image
+        className={s.bigSlideImage}
+        src={imageUrl}
+      />
+    </div>
+  )
+
   return (
-    <div>
+    <div onMouseEnter={hideAllNavBar}>
       <div className={s.sectionOneContainer}>
         <div className={s.sectionOneInnerContainer}>
           <div className={s.captionText}>
@@ -136,7 +179,22 @@ export default function Home() {
       <div className={s.sectionTwoContainer}>
         <div className={s.sectionTwoInnerContainer}>
           <div className={s.bigNewsAndBigSlideContainer}>
-
+            <div className={s.bigNewsContainer}>
+              <div className={s.bigNewsTitle}>
+                {'最新消息'}
+              </div>
+              <div className={s.moreTextContainer}>
+                <Image
+                  src={rightArrowImage}
+                />
+                <div className={s.teamTitle}>
+                  {'更多'}
+                </div>
+              </div>
+            </div>
+            <BigSlideContainer
+              data={sectionTwoSlides[0]}
+            />
           </div>
           <div className={s.newsSwiperContainer}>
             <Swiper
@@ -144,11 +202,95 @@ export default function Home() {
               modules={[Pagination]}
               className="mySwiper"
             >
-              
+              {
+                newsSwiperData.map(item => (
+                  <SwiperSlide>
+                    <div className={s.newsSwiperSlide}>
+                      {
+                        item.map(subItem => (
+                          <BigSlideContainer data={subItem}/>
+                        ))
+                      }
+                    </div>
+                  </SwiperSlide>
+                ))
+              }
             </Swiper>
           </div>
           <div className={s.twoBlocksContainer}>
-
+            <div className={s.horizontalLinearBlock}>
+              <div className={s.subContentTitle}>
+                {'專題報導'}
+                <div className={s.slideWhiteSeperator}/>
+              </div>
+              <div className={s.bigProjectNewsContainer}>
+                <div className={s.bigProjectLeftSide}>
+                  <div className={`${s.leagueTitle} ${s.textAlignLeft}`}>
+                    {'巴科爾奪中銀人壽香港超級聯賽3月最有價值球員'}
+                    <div className={s.slideBlackSeperator}/>
+                  </div>
+                  <div className={`${s.teamTitle} ${s.textAlignLeft}`}>
+                    {'更多...'}
+                  </div>
+                </div>
+                <div className={s.bigProjectRightSide}>
+                  <Image
+                    src={mvpImg}
+                    className={s.containImg}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={s.horizontalLinearBlock}>
+              <div className={s.subContentTitle}>
+                {'最新賽果'}
+                <div className={s.slideWhiteSeperator}/>
+              </div>
+              <div className={s.matchResultRowsContainer}>
+                {
+                  schemes.map(scheme => (
+                    <div className={s.matchResultRow}>
+                      <div className={s.matchResultContainer}>
+                        <div className={s.matchTeamContainer}>
+                          <Image 
+                            src={scheme.leftTeam.logoUrl}
+                            width={71}
+                            height={71}
+                            className={s.teamLogo}
+                          />
+                          <div className={s.matchTeamTitle}>
+                            {scheme.leftTeam.title}
+                          </div>
+                        </div>
+                        <div className={s.centerMatchInfoContainer}>
+                          <div className={s.matchDate}>
+                            {scheme.date}
+                          </div>
+                          <div className={s.scoresContainer}>
+                            <div className={s.scoresCell}>{scheme.leftTeamScore}</div>
+                            <div className={s.scoresCell}>{scheme.rightTeamScore}</div>
+                          </div>
+                          <div className={s.leagueTitle}>
+                            {scheme.league}
+                          </div>
+                        </div>
+                        <div className={s.matchTeamContainer}>
+                          <Image 
+                            src={scheme.rightTeam.logoUrl}
+                            width={71}
+                            height={71}
+                            className={s.teamLogo}
+                          />
+                          <div className={s.teamTitle}>
+                            {scheme.rightTeam.title}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>

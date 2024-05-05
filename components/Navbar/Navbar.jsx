@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from "next/head";
 import Image from "next/image";
-import { navBarRoutes } from './Constants'
+import { navBarRoutes, navBarBottomBars, medias  } from './Constants'
 import s from './Navbar.module.css'
 
-
 const Navbar = () => {
+
+  const [currentRoute, setCurrentRoute] = useState(null)
+  const whiteListRoutes = [0,1,2,5,8]
+
+  const onHoverRouteCell = (index) => {
+    if(currentRoute !== null){
+      const previousBottomRow = document.getElementById(`bottomRow${currentRoute}`)
+      previousBottomRow.style.top = `0px`;
+      previousBottomRow.style.opacity = 0;  
+    }
+    if(whiteListRoutes.includes(index)){
+      setCurrentRoute(index)
+      const bottomRow = document.getElementById(`bottomRow${index}`)
+      bottomRow.style.top = `${70}px`;
+      bottomRow.style.opacity = 1;
+    }
+  }
+
   return (
     <>
       <Head>
@@ -26,8 +43,12 @@ const Navbar = () => {
             />
           </div>
           <div className={s.routesContainer}>
-            {navBarRoutes.map(item => 
-              <div className={s.routeCell}>
+            {navBarRoutes.map((item, index) => 
+              <div 
+                className={s.routeCell}
+                onMouseEnter={(e) => onHoverRouteCell(index)}
+                // onMouseLeave={() => onLeaveRouteCell(index)}
+              >
                 {item}
               </div>  
             )}
@@ -35,12 +56,37 @@ const Navbar = () => {
           <div className={s.languageContainer}>
           </div>
         </div>
-        <div className={s.navBarBottomRowContainer}>
-
-        </div>
-        <div className={s.rightBottomFixedMediasContainer}>
-
-        </div>
+      </div>
+      {
+        navBarBottomBars.map((routes, index) => (
+          <div className={s.navBarBottomRowContainer} id={`bottomRow${index}`}>
+            {
+              index === 3 
+              ? 
+                (
+                  null
+                )
+              : 
+                (
+                  routes.map(item => (
+                    <div className={s.bottomRowRoutes}>
+                      {item}
+                    </div>
+                  ))
+                )
+            }
+          </div>
+        ))
+      }
+      <div className={s.rightBottomFixedMediasContainer}>
+        {medias.map(item =>
+          <a href={item.url} target={'_blank'}>
+            <Image
+              src={item.icon}
+              className={s.mediaIcon}
+            />  
+          </a> 
+        )}
       </div>
     </>
   )

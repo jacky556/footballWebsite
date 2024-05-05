@@ -318,3 +318,82 @@ export const calendarImage = calendar;
 import footballPitch from '../public/Images/footballPitch.svg'
 
 export const footballPitchImage = footballPitch;
+
+import rightArrow from '../public/Images/rightArrow.svg'
+
+export const rightArrowImage = rightArrow;
+
+import bigSlideImg from '../public/Images/20240420a.jpg'
+
+export const bigSlideImage = bigSlideImg;
+
+export const sectionTwoSlides = [
+    {
+        title: '2023-24年度中銀人壽香港超級聯賽賽事 – 大埔 0:0 傑志',
+        description: '今天(4月20日)假大埔運動場上演的中銀人壽香港超級聯賽賽事，大埔以 0:0 與傑志打成平手，各得一分。今日的入場人數為1,481人，購票人數為1,353人，門券收入為港幣$54,300元正。',
+        imageUrl: bigSlideImage,
+        isBig: true
+    }
+]
+
+import mvp from '../public/Images/MVP_POST_march.jpg'
+export const mvpImg = mvp;
+
+import newsSwiperImg1 from '../public/Images/20240403a.jpg';
+import newsSwiperImg2 from '../public/Images/20240420a.jpg';
+import newsSwiperImg3 from '../public/Images/20240428a.jpg';
+import newsSwiperImg4 from '../public/Images/generalnews.jpg'
+
+export const newsSwiperData = [
+    [
+        {
+            title: "2023-24年度賽馬會菁英盃準決賽賽事 – 傑志 4:3 大埔 ",
+            imageUrl: newsSwiperImg1,
+            isBig: false,
+        },
+        {
+            title: "2023-24年度中銀人壽香港超級聯賽 – 深水埗 0:3 東方",
+            imageUrl: newsSwiperImg2,
+            isBig: false,
+        },
+        {
+            title: "2023/2024年度紀律及道德委員會會議(22/4/2024)",
+            imageUrl: newsSwiperImg3,
+            isBig: false,
+        }
+    ],
+    [
+        {
+            title: "2023-24年度賽馬會菁英盃準決賽賽事 – 傑志 4:3 大埔 ",
+            imageUrl: newsSwiperImg4,
+            isBig: false,
+        },
+        {
+            title: "2023-24年度中銀人壽香港超級聯賽 – 深水埗 0:3 東方",
+            imageUrl: newsSwiperImg4,
+            isBig: false,
+        },
+        {
+            title: "2023/2024年度紀律及道德委員會會議(22/4/2024)",
+            imageUrl: newsSwiperImg4,
+            isBig: false,
+        }
+    ],
+    [
+        {
+            title: "2023-24年度賽馬會菁英盃準決賽賽事 – 傑志 4:3 大埔 ",
+            imageUrl: newsSwiperImg4,
+            isBig: false,
+        },
+        {
+            title: "2023-24年度中銀人壽香港超級聯賽 – 深水埗 0:3 東方",
+            imageUrl: newsSwiperImg4,
+            isBig: false,
+        },
+        {
+            title: "2023/2024年度紀律及道德委員會會議(22/4/2024)",
+            imageUrl: newsSwiperImg4,
+            isBig: false,
+        }
+    ],
+]

@@ -64,6 +64,11 @@
     font-size: 12px;
 }
 
+.sponsorImage{
+    max-width: 100%;
+    cursor: pointer;
+}
+
 
 @media only screen and (min-width: 1200px){
     .footerContainer{
