@@ -1,4 +1,4 @@
-import { navBarRoutes } from "@/components/Navbar/Constants";
+import { navBarRoutes } from "../components/Navbar/Constants";
 
 export const hideAllNavBar = () => {
     for (let index = 0; index < navBarRoutes.length; index++) {
