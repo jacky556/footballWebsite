@@ -161,22 +161,34 @@ export const columns = [
     },
 ]
 
+import sponsorImage1 from "../../public/Images/BOCL_2.jpg"
+import sponsorImage2 from "../../public/Images/Nike_1.jpg"
+import sponsorImage3 from "../../public/Images/Nissin_logo.png"
+import sponsorImage4 from "../../public/Images/Pocari_Sweat.png"
+import sponsorImage5 from "../../public/Images/WW_Logo.png"
+import sponsorImage6 from "../../public/Images/adidas4.jpg"
+import sponsorImage7 from "../../public/Images/BOCHK.jpg"
+import sponsorImage8 from "../../public/Images/hkjcct2018.png"
+import sponsorImage9 from "../../public/Images/1_fifalogo.gif"
+import sponsorImage10 from "../../public/Images/2_afclogo.gif"
+import sponsorImage11 from "../../public/Images/3_eaff_logo_2017.jpg"
+
 export const sponsorsRow = [
     [
-        "/Images/BOCL_2.jpg",
-        "/Images/Nike_1.jpg", 
-        "/Images/Nissin_logo.png", 
-        "/Images/Pocari_Sweat.png", 
-        "/Images/WW_Logo.png"
+        sponsorImage1,
+        sponsorImage2, 
+        sponsorImage3, 
+        sponsorImage4, 
+        sponsorImage5
     ],
     [
-        "/Images/adidas4.jpg", 
-        "/Images/BOCHK.jpg", 
-        "/Images/hkjcct2018.png",
+        sponsorImage6, 
+        sponsorImage7, 
+        sponsorImage8,
     ],
     [
-        "/Images/1_fifalogo.gif", 
-        "/Images/2_afclogo.gif", 
-        "/Images/3_eaff_logo_2017.jpg"
+        sponsorImage9, 
+        sponsorImage10, 
+        sponsorImage11
     ]
 ]

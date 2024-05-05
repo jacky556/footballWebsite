@@ -14,8 +14,8 @@ import {
   sectionTwoSlides,
   mvpImg,
   newsSwiperData
-} from "./homePageConstants";
-import { hideAllNavBar } from "./utilities";
+} from "../utilities/homePageConstants";
+import { hideAllNavBar } from "../utilities/utilities";
 import Image from "next/image";
 // core version + navigation, pagination modules:
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -72,6 +72,7 @@ export default function Home() {
       <Image
         className={s.bigSlideImage}
         src={imageUrl}
+        alt={"slideImage"}
       />
     </div>
   )
@@ -89,10 +90,10 @@ export default function Home() {
             <Image 
               src={calendarImage}
               className={s.calendarImage}
+              alt={"calendarImage"}
             />
             {'加入賽程至日曆'}
           </div>
-          {console.log("jopjqwe", teams.map((item,index) => ({title: item.title, index})))}
           <Swiper
             pagination={pagination}
             modules={[Pagination]}
@@ -100,12 +101,12 @@ export default function Home() {
           >
             {
               allFixtures.map(
-                fixtures => (
-                  <SwiperSlide>
+                (fixtures, index) => (
+                  <SwiperSlide key={`fixtures${index}`}>
                     <div className={s.scheduleSwiperContainer}>
                     {
-                      fixtures.map(fixture => (
-                        <div className={s.scheduleCard}>
+                      fixtures.map((fixture, index) => (
+                        <div key={`${fixture.time}2 ${index}`} className={s.scheduleCard}>
                           <div className={s.scheduleCardDateTimeContainer}>
                             <div className={s.scheduleCardDateTime}>
                               <span>{fixture.date}</span>
@@ -133,6 +134,7 @@ export default function Home() {
                                   width={71}
                                   height={71}
                                   className={s.teamLogo}
+                                  alt={"leftTeamImage"}
                                 />
                               </div>
                               <div className={s.scheduleTeamTitle}>
@@ -151,6 +153,7 @@ export default function Home() {
                                   width={71}
                                   height={71}
                                   className={s.teamLogo}
+                                  alt={"rightTeamImage"}
                                 />
                               </div>
                               <div className={s.scheduleTeamTitle}>
@@ -162,6 +165,7 @@ export default function Home() {
                             <Image
                               src={footballPitchImage}
                               className={s.footballPitchImage}
+                              alt={"footballPitchImage"}
                             />
                             <div className={s.scheduleCardLocationText}>{fixture.location}</div>
                           </div>
@@ -186,6 +190,7 @@ export default function Home() {
               <div className={s.moreTextContainer}>
                 <Image
                   src={rightArrowImage}
+                  alt={"rightArrow"}
                 />
                 <div className={s.teamTitle}>
                   {'更多'}
@@ -203,12 +208,12 @@ export default function Home() {
               className="mySwiper"
             >
               {
-                newsSwiperData.map(item => (
-                  <SwiperSlide>
-                    <div className={s.newsSwiperSlide}>
+                newsSwiperData.map((item, index) => (
+                  <SwiperSlide key={`newsSwiper${index}`}>
+                    <div key={`newsSwiper2${index}`} className={s.newsSwiperSlide}>
                       {
-                        item.map(subItem => (
-                          <BigSlideContainer data={subItem}/>
+                        item.map((subItem, subIndex) => (
+                          <BigSlideContainer key={`bigSlides ${subIndex}`} data={subItem}/>
                         ))
                       }
                     </div>
@@ -237,6 +242,7 @@ export default function Home() {
                   <Image
                     src={mvpImg}
                     className={s.containImg}
+                    alt={"mvpImage"}
                   />
                 </div>
               </div>
@@ -248,8 +254,8 @@ export default function Home() {
               </div>
               <div className={s.matchResultRowsContainer}>
                 {
-                  schemes.map(scheme => (
-                    <div className={s.matchResultRow}>
+                  schemes.map((scheme, index) => (
+                    <div key={`${scheme.date} ${index}`} className={s.matchResultRow}>
                       <div className={s.matchResultContainer}>
                         <div className={s.matchTeamContainer}>
                           <Image 
@@ -257,6 +263,7 @@ export default function Home() {
                             width={71}
                             height={71}
                             className={s.teamLogo}
+                            alt={"LeftTeamImage"}
                           />
                           <div className={s.matchTeamTitle}>
                             {scheme.leftTeam.title}
@@ -280,6 +287,7 @@ export default function Home() {
                             width={71}
                             height={71}
                             className={s.teamLogo}
+                            alt={"rightTeamImage"}
                           />
                           <div className={s.teamTitle}>
                             {scheme.rightTeam.title}
@@ -303,11 +311,12 @@ export default function Home() {
           <SwiperSlide>
             <div className={s.singlePageSliderContainer}>
               {
-                singlePageSliderImages.map(item =>
-                  <div className={s.eventBannerContainer}>
+                singlePageSliderImages.map((item, index) =>
+                  <div key={`eventImages${index}`} className={s.eventBannerContainer}>
                     <Image
                       className={s.eventBanner}
                       src={item}
+                      alt={"eventImage"}
                     />
                   </div>
                 )
@@ -317,11 +326,12 @@ export default function Home() {
           <SwiperSlide>
             <div className={s.singlePageSliderContainer}>
               {
-                singlePageSliderImages.map(item =>
-                  <div className={s.eventBannerContainer}>
+                singlePageSliderImages.map((item, index) =>
+                  <div key={`eventBannerImages${index}`} className={s.eventBannerContainer}>
                     <Image
                       className={s.eventBanner}
                       src={item}
+                      alt={"eventImage"}
                     />
                   </div>
                 )
@@ -331,11 +341,12 @@ export default function Home() {
         </Swiper>
         <div className={s.patternBar}>
           {
-            [0,1,2,3].map(item =>
-              <div className={s.patternContainer}>
+            [0,1,2,3].map((item, index) =>
+              <div key={`patternContainer${index}`} className={s.patternContainer}>
                 <Image
                   className={s.patternImage}
                   src={patternImage}
+                  alt={"patternImage"}
                 />
                 <div className={s.patternText}>
                   {'FOOTBALL ASSOCIATION OF HONG KONG, CHINA'}
@@ -357,14 +368,15 @@ export default function Home() {
           </div>
           <div className={s.teamsLogoContainer}>
             {
-              teams.map(team => 
-                <div className={s.teamContainer}>
+              teams.map((team, index) => 
+                <div key={`${team.title} ${index}`} className={s.teamContainer}>
                   <div className={s.teamLogoContainer}>
                     <Image 
                       src={team.logoUrl}
                       width={71}
                       height={71}
                       className={s.teamLogo}
+                      alt={"teamImage"}
                     />
                   </div>
                   <div className={s.teamTitle}>
@@ -383,8 +395,8 @@ export default function Home() {
           </div>
           <div className={s.matchResultRowsContainer}>
             {
-              schemes.map(scheme => (
-                <div className={s.matchResultRow}>
+              schemes.map((scheme, index) => (
+                <div key={`${scheme.date} ${index}`} className={s.matchResultRow}>
                   <div className={s.matchResultContainer}>
                     <div className={s.matchTeamContainer}>
                       <Image 
@@ -392,6 +404,7 @@ export default function Home() {
                         width={71}
                         height={71}
                         className={s.teamLogo}
+                        alt={"leftTeamImage"}
                       />
                       <div className={s.matchTeamTitle}>
                         {scheme.leftTeam.title}
@@ -415,6 +428,7 @@ export default function Home() {
                         width={71}
                         height={71}
                         className={s.teamLogo}
+                        alt={"leftTeamImage"}
                       />
                       <div className={s.teamTitle}>
                         {scheme.rightTeam.title}
@@ -430,15 +444,16 @@ export default function Home() {
           </div>
           <div className={s.rankContainer}>
             <div className={s.rankGridRow}>
-              {rankHeaders.map(header => (
-                <div className={s.rankHeaderCell}>
+              {rankHeaders.map((header, index) => (
+                <div key={`${header} ${index}`} className={s.rankHeaderCell}>
                   {header}
                 </div>
               ))}
             </div>
             {
               ranking.map((rank, index) => (
-                <div 
+                <div
+                  key={`${rank.team.title} ${index}`}
                   className={s.rankGridRow}
                   style={{
                     backgroundColor: (index + 1) % 2 === 0 && 'hsla(0, 0%, 100%, .35)' 
@@ -450,17 +465,18 @@ export default function Home() {
                       switch (item) {
                         case 0:
                           return (
-                            <div className={s.rankCellContainer}>
+                            <div key={`rankTeam${index}`} className={s.rankCellContainer}>
                               {index + 1}
                             </div>
                           ) 
                         case 1:
                           return (
-                            <div className={s.rankTeamCellContainer}>
+                            <div key={`rankTeam${index}`} className={s.rankTeamCellContainer}>
                               <Image
                                 src={rank.team.logoUrl}
                                 width={48}
                                 height={48}
+                                alt={"leftTeamImage"}
                               />
                               <div className={s.rankTeamTitle}>
                                 {rank.team.title}
@@ -469,7 +485,7 @@ export default function Home() {
                           )
                         default:
                           return (
-                            <div className={s.rankCellContainer}>
+                            <div key={`rankTeam${index}`} className={s.rankCellContainer}>
                               {rank[keysOfRank[item - 1]]}
                             </div>
                           )

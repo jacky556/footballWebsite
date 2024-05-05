@@ -10,13 +10,15 @@ const Footer = () => {
             <div className={s.sponsorsContainer}>
                 <div className={s.sponsorsInnerContainer}>
                     {
-                        sponsorsRow.map(row => (
-                            <div className={s.sponsorsRow}>
+                        sponsorsRow.map((row, index) => (
+                            <div key={`sponsorsRow${index}`} className={s.sponsorsRow}>
                                 {
-                                    row.map(item => (
-                                        <img 
+                                    row.map((item, index) => (
+                                        <Image 
                                             src={item}
                                             className={s.sponsorImage}
+                                            key={`sponsor${index}`}
+                                            alt={`sponsor${index}`}
                                         />
                                     ))
                                 }
@@ -28,14 +30,14 @@ const Footer = () => {
             <div className={s.footerContainer}>
                 <div className={s.footerInnerContainer}>
                     {
-                        columns.map(item => 
-                            <div className={s.footerColumnContainer}>
+                        columns.map((item, index) => 
+                            <div key={`${item.title} ${index}`}  className={s.footerColumnContainer}>
                                 <div className={s.titleContainer}>
                                     {item.title}
                                 </div>
                                 {
-                                    item.routes.map(route => 
-                                        <div className={s.routeContainer}>
+                                    item.routes.map((route, index) => 
+                                        <div key={`${route.title} ${index}`} className={s.routeContainer}>
                                             <a className={s.routeText}>
                                                 {route.title}
                                             </a>
@@ -52,6 +54,7 @@ const Footer = () => {
                         src={"/footerImg.png"}
                         height={98}
                         width={98}
+                        alt={'footerImage'}
                     />
                     <div className={s.copyright}>
                         {'Copyright (c) 2024 The Football Association of Hong Kong, China Limited. All rights reserved.'}

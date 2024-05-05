@@ -40,11 +40,13 @@ const Navbar = () => {
               width={96}
               height={96}
               className={s.icon}
+              alt={'footerImg'}
             />
           </div>
           <div className={s.routesContainer}>
             {navBarRoutes.map((item, index) => 
               <div 
+                key={`${item} ${index}`}
                 className={s.routeCell}
                 onMouseEnter={(e) => onHoverRouteCell(index)}
                 // onMouseLeave={() => onLeaveRouteCell(index)}
@@ -59,7 +61,7 @@ const Navbar = () => {
       </div>
       {
         navBarBottomBars.map((routes, index) => (
-          <div className={s.navBarBottomRowContainer} id={`bottomRow${index}`}>
+          <div key={`navBarRoutes ${index}`} className={s.navBarBottomRowContainer} id={`bottomRow${index}`}>
             {
               index === 3 
               ? 
@@ -68,8 +70,8 @@ const Navbar = () => {
                 )
               : 
                 (
-                  routes.map(item => (
-                    <div className={s.bottomRowRoutes}>
+                  routes.map((item, subIndex) => (
+                    <div key={`${item} ${subIndex}`} className={s.bottomRowRoutes}>
                       {item}
                     </div>
                   ))
@@ -79,11 +81,12 @@ const Navbar = () => {
         ))
       }
       <div className={s.rightBottomFixedMediasContainer}>
-        {medias.map(item =>
-          <a href={item.url} target={'_blank'}>
+        {medias.map((item, index) =>
+          <a key={`${item.url} ${index}`} href={item.url} target={'_blank'}>
             <Image
               src={item.icon}
               className={s.mediaIcon}
+              alt={'mediaIcons'}
             />  
           </a> 
         )}
