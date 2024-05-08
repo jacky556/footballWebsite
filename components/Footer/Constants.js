@@ -161,17 +161,17 @@ export const columns = [
     },
 ]
 
-import sponsorImage1 from "../../public/Images/BOCL_2.JPG"
-import sponsorImage2 from "../../public/Images/Nike_1.JPG"
+import sponsorImage1 from "../../public/Images/BOCL_2.jpg"
+import sponsorImage2 from "../../public/Images/Nike_1.jpg"
 import sponsorImage3 from "../../public/Images/Nissin_logo.png"
 import sponsorImage4 from "../../public/Images/Pocari_Sweat.png"
 import sponsorImage5 from "../../public/Images/WW_Logo.png"
-import sponsorImage6 from "../../public/Images/adidas4.JPG"
-import sponsorImage7 from "../../public/Images/BOCHK.JPG"
+import sponsorImage6 from "../../public/Images/adidas4.jpg"
+import sponsorImage7 from "../../public/Images/BOCHK.jpg"
 import sponsorImage8 from "../../public/Images/hkjcct2018.png"
 import sponsorImage9 from "../../public/Images/1_fifalogo.gif"
 import sponsorImage10 from "../../public/Images/2_afclogo.gif"
-import sponsorImage11 from "../../public/Images/3_eaff_logo_2017.JPG"
+import sponsorImage11 from "../../public/Images/3_eaff_logo_2017.jpg"
 
 export const sponsorsRow = [
     [

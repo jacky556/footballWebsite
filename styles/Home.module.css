@@ -13,7 +13,7 @@
 }
 
 .sectionOneContainer{
-  /* background-image: url(/Images/739f79e-1600.JPG);
+  /* background-image: url(/Images/739f79e-1600.jpg);
   background-size: cover;
   background-repeat: no-repeat; */
   background: linear-gradient(180deg, #2a69c6 0, #031c40);
@@ -137,7 +137,7 @@
 }
 
 .sectionBackground{
-  background-image: url(/Images/SectionBackground.JPG);
+  background-image: url(/Images/SectionBackground.jpg);
 }
 
 .contentContainer{

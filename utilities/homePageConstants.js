@@ -295,7 +295,7 @@ import banner3 from '../public/Images/EventBanners/media.png';
 import banner4 from '../public/Images/EventBanners/store.png';
 import banner5 from '../public/Images/EventBanners/全運會HKG_Photo Contest 1140X540_webban_D2 test.png';
 import banner6 from '../public/Images/EventBanners/全運會Opening Ceremony.jpeg';
-import banner7 from '../public/Images/EventBanners/全運會Voting_bannerA_chi_0221-01-01.JPG';
+import banner7 from '../public/Images/EventBanners/全運會Voting_bannerA_chi_0221-01-01.jpg';
 
 export const singlePageSliderImages = [
     banner1,
@@ -323,7 +323,7 @@ import rightArrow from '../public/Images/rightArrow.svg'
 
 export const rightArrowImage = rightArrow;
 
-import bigSlideImg from '../public/Images/20240420a.JPG'
+import bigSlideImg from '../public/Images/20240420a.jpg'
 
 export const bigSlideImage = bigSlideImg;
 
@@ -336,13 +336,13 @@ export const sectionTwoSlides = [
     }
 ]
 
-import mvp from '../public/Images/MVP_POST_march.JPG'
+import mvp from '../public/Images/MVP_POST_march.jpg'
 export const mvpImg = mvp;
 
-import newsSwiperImg1 from '../public/Images/20240403a.JPG';
-import newsSwiperImg2 from '../public/Images/20240420a.JPG';
-import newsSwiperImg3 from '../public/Images/20240428a.JPG';
-import newsSwiperImg4 from '../public/Images/generalnews.JPG'
+import newsSwiperImg1 from '../public/Images/20240403a.jpg';
+import newsSwiperImg2 from '../public/Images/20240420a.jpg';
+import newsSwiperImg3 from '../public/Images/20240428a.jpg';
+import newsSwiperImg4 from '../public/Images/generalnews.jpg'
 
 export const newsSwiperData = [
     [
