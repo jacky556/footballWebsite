@@ -2,12 +2,13 @@ import React from 'react'
 import { columns, sponsorsRow, footerImage } from './Constants'
 import s from './Footer.module.css'
 import Image from 'next/image'
+import { hideAllNavBar } from '@/utilities/utilities'
 
 const Footer = () => {
 
     return (
         <React.Fragment>
-            <div className={s.sponsorsContainer}>
+            <div onMouseEnter={hideAllNavBar} className={s.sponsorsContainer}>
                 <div className={s.sponsorsInnerContainer}>
                     {
                         sponsorsRow.map((row, index) => (
@@ -27,7 +28,7 @@ const Footer = () => {
                     }
                 </div>
             </div>
-            <div className={s.footerContainer}>
+            <div onMouseEnter={hideAllNavBar} className={s.footerContainer}>
                 <div className={s.footerInnerContainer}>
                     {
                         columns.map((item, index) => 
