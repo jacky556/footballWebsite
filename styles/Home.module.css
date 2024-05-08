@@ -137,7 +137,7 @@
 }
 
 .sectionBackground{
-  background-image: url(/Images/SectionBackground.jpg);
+  background-image: url('../public/Images/SectionBackground.jpg');
 }
 
 .contentContainer{
