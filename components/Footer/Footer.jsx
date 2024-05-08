@@ -1,5 +1,5 @@
 import React from 'react'
-import { columns, sponsorsRow } from './Constants'
+import { columns, sponsorsRow, footerImage } from './Constants'
 import s from './Footer.module.css'
 import Image from 'next/image'
 
@@ -51,7 +51,7 @@ const Footer = () => {
                 <hr/>
                 <div className={s.iconSection}>
                     <Image
-                        src={"/footerImg.png"}
+                        src={footerImage}
                         height={98}
                         width={98}
                         alt={'footerImage'}

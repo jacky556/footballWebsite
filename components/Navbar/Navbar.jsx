@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from "next/head";
 import Image from "next/image";
 import { navBarRoutes, navBarBottomBars, medias  } from './Constants'
+import { footerImage } from '../Footer/Constants'
 import s from './Navbar.module.css'
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
         <div className={s.navBarTopRowContainer}>
           <div className={s.imageContainer}>
             <Image 
-              src={'/footerImg.png'}
+              src={footerImage}
               width={96}
               height={96}
               className={s.icon}

@@ -1,47 +1,59 @@
+import teamImg1 from "../public/Images/Teams/Rangers_Logo_Final_1.png"
+import teamImg2 from "../public/Images/Teams/Golik_northern.png"
+import teamImg3 from "../public/Images/Teams/eastern.png"
+import teamImg4 from "../public/Images/Teams/HKU23_Logo.png"
+import teamImg5 from "../public/Images/Teams/HKFC_Logo.png"
+import teamImg6 from "../public/Images/Teams/Kitchee_normal_logo.png"
+import teamImg7 from "../public/Images/Teams/KCS_Logo.png"
+import teamImg8 from "../public/Images/Teams/Lee_Man.png"
+import teamImg9 from "../public/Images/Teams/RCFC_NEW_Logo_w.png"
+import teamImg10 from "../public/Images/Teams/ssp.png"
+import teamImg11 from "../public/Images/Teams/tp.png"
+
 export const teams = [
     {
         title: "標準流浪",
-        logoUrl: "/Images/Teams/Rangers_Logo_Final_1.png"
+        logoUrl: teamImg1
     },
     {
         title: "均業北區",
-        logoUrl: "/Images/Teams/Golik_northern.png"
+        logoUrl: teamImg2
     },
     {
         title: "東方",
-        logoUrl: "/Images/Teams/eastern.png"
+        logoUrl: teamImg3
     },
     {
         title: "香港U23",
-        logoUrl: "/Images/Teams/HKU23_Logo.png"
+        logoUrl: teamImg4
     },
     {
         title: "港會",
-        logoUrl: "/Images/Teams/HKFC_Logo.png"
+        logoUrl: teamImg5
     },
     {
         title: "傑志",
-        logoUrl: "/Images/Teams/Kitchee_normal_logo.png"
+        logoUrl: teamImg6
     },
     {
         title: "冠忠南區",
-        logoUrl: "/Images/Teams/KCS_Logo.png"
+        logoUrl: teamImg7
     },
     {
         title: "理文",
-        logoUrl: "/Images/Teams/Lee_Man.png"
+        logoUrl: teamImg8
     },
     {
         title: "晉峰",
-        logoUrl: "/Images/Teams/RCFC_NEW_Logo_w.png"
+        logoUrl: teamImg9
     },
     {
         title: "深水埗",
-        logoUrl: "/Images/Teams/ssp.png"
+        logoUrl: teamImg10
     },
     {
         title: "大埔",
-        logoUrl: "/Images/Teams/tp.png"
+        logoUrl: teamImg11
     },
 ]
 

@@ -192,3 +192,7 @@ export const sponsorsRow = [
         sponsorImage11
     ]
 ]
+
+import footerImg from '../../public/Images/footerImg.png'
+
+export const footerImage = footerImg
